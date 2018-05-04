@@ -42,7 +42,7 @@ function getProductsFromCategory(id, callback) {
   client.connect();
 
   return client.query(
-    "SELECT p.*, cat.label FROM products p inner join product_categories lcp on lcp.id = p.id inner join categories cat on cat.id=lcp.category_id where lcp.category_id=$1::uuid",
+    "SELECT p.*, cat.label FROM products p inner join category_products lcp on lcp.product_id = p.id inner join categories cat on cat.id=lcp.category_id where lcp.category_id=$1::uuid",
     [id])
     .then((result) => result.rows)
     .then((data) => {
