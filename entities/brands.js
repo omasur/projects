@@ -1,7 +1,12 @@
 const PG = require("pg");
 
+// const client = new Client({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: true,
+// });
+
 function findAll() {
-  const client = new PG.Client();
+  const client = new PG.Client(process.env.DATABASE_URL);
   client.connect();
 
   return client.query(
@@ -19,7 +24,7 @@ function findAll() {
 }
 
 function findById(id) {
-  const client = new PG.Client();
+  const client = new PG.Client(process.env.DATABASE_URL);
   client.connect();
 
   return client.query(
@@ -38,7 +43,7 @@ function findById(id) {
 
 function insertBrands(brands) {
   console.log("INSERT BRANDS : " + brands.length + " lines have to be inserted.");
-  const client = new PG.Client();
+  const client = new PG.Client(process.env.DATABASE_URL);
   client.connect();
 
   let indice = 0;
@@ -68,7 +73,7 @@ function insertNextBrand(client, brands, indice) {
 
 function insertBrandsPromise(brands) {
   console.log("INSERT BRANDS PROMISE : " + brands.length + " lines have to be inserted.");
-  const client = new PG.Client();
+  const client = new PG.Client(process.env.DATABASE_URL);
   client.connect();
 
   let indice = 0;

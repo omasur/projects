@@ -4,7 +4,7 @@ function insertLienCategoriesProducts(category_id, lienCategoriesProducts, done)
   //console.log("INSERT lienCategoriesProducts : " + category_id + " : "+ lienCategoriesProducts.length + " lines have to be inserted.");
   if (lienCategoriesProducts.length > 0) {
     //console.log(lienCategoriesProducts);
-    const client = new PG.Client();
+    const client = new PG.Client(process.env.DATABASE_URL);
     client.connect();
 
     let indice = 0;
