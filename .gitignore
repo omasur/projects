@@ -1,0 +1,6 @@
+node_modules
+.env_var
+Pictures
+.sass-cache
+.git
+.eslintrc.js

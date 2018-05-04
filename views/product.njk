@@ -1,0 +1,12 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <h1>Product {{ myProduct[0].decathlon_id }}</h1>
+  <ul>
+  {% for prod in myProduct %}
+    {# <li>{{ cat.label }}</li> #}
+    {{ prod.title }}
+  {% endfor %}
+  </ul>
+
+{% endblock %}

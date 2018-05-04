@@ -1,0 +1,41 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  {# <h1>Product from Categorie {{myProductsCategory[0].label}}</h1> #}
+  {# <ul> #}
+  {# <div class="container">
+    <div class="row">
+      <div class="col col-sm-8 m-auto">
+  {% for prod in myProductsCategory %}
+    <div class="card" style="width: 18rem;">
+      <a href="/products/{{ prod.id }}"><img class="card-img-top" src="/img/velo.jpg" alt="Card image cap"></a>
+      <div class="card-body">
+        <p class="card-text">{{ prod.title }}</p>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div> #}
+<div class="container">
+  <div class="row">
+    {% for prod in myProductsCategory %}
+    <div class="col-12 col-md-4 col-lg-3">
+      <div class="card-deck">
+        <div class="card">
+          <a href="/products/{{ prod.id }}">
+          <img class="card-img-top" src="https://www.decathlon.fr/media/{{prod.image_path}}" alt="Card image cap">
+          <div class="card-body">
+            {# <h5 class="card-title">Card title</h5> #}
+          <p class="card-text">{{ prod.title }}</p>
+          </div>
+          </a>
+        </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+</div>
+
+
+
+{% endblock %}

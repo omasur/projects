@@ -1,0 +1,19 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    {# <div class="col col-sm-4"></div> #}
+    <div class="col col-sm-8 m-auto">
+      <table class="table table-striped">
+        {% for cat in myCategories %}
+          <tr><td><a href="/categories/{{ cat.id }}/products" >{{ cat.label }}</a></td></tr>
+        {% else %}
+          Bof
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
